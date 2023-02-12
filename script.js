@@ -30,9 +30,6 @@ let cards = [
 ];
 
 const card1 = document.querySelector(".card-one");
-//const card2 = document.querySelector(".card-two");
-////const card3 = document.querySelector(".card-three");
-//const card4 = document.querySelector(".card-four");
 
 //foreach da anein bo away bo har danekyan awaman bobkat w function eky anonym da anein ka parameter akay nawakay nzikbet la eshakawa
 cards.forEach(function (card, index) {
