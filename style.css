@@ -7,7 +7,7 @@
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 2rem auto 13rem 9rem 2rem;
+  grid-template-rows: 2rem auto 13rem 1fr 2rem;
   grid-template-areas:
     "navbar navbar navbar navbar"
     "header header header header" "about about info info"
@@ -33,9 +33,13 @@ nav ul li a {
   font-weight: 500;
   text-decoration: none;
 }
-
+nav ul li a:hover {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 3px;
+}
 .header {
-  background-color: aqua;
   grid-column-start: 1;
   grid-column-end: 5;
   background-image: url(cr6.jpg);
@@ -48,8 +52,9 @@ nav ul li a {
 .header h1 {
   color: white;
   display: flex;
-  justify-content: flex-start;
-  padding: 200px 30px;
+  justify-content: start;
+  font-size: 45px;
+  padding: 200px 5px;
 }
 
 .section-one {
@@ -76,25 +81,13 @@ article {
   padding: 10px 20px;
 }
 .card-one {
-  grid-column-start: 1;
-  grid-column-end: 2;
+  display: flex;
+  grid-row: card;
+  grid-column: card;
   background-color: rgb(253, 253, 253);
+  padding: 10px 20px;
 }
-.card-two {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  background-color: rgb(253, 253, 253);
-}
-.card-three {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  background-color: rgb(253, 253, 253);
-}
-.card-four {
-  grid-column-start: 4;
-  grid-column-end: 5;
-  background-color: rgb(253, 253, 253);
-}
+
 footer {
   background-color: rgb(0, 0, 0);
   grid-column-start: footer;
@@ -114,5 +107,8 @@ footer {
       "about info"
       "card"
       "footer";
+  }
+  .card-one {
+    display: grid;
   }
 }

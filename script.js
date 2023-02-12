@@ -1,4 +1,4 @@
-let card = [
+let cards = [
   {
     sportingClub: ["Manchester united  "],
     year: ["2003-2008 "],
@@ -30,28 +30,30 @@ let card = [
 ];
 
 const card1 = document.querySelector(".card-one");
-const card2 = document.querySelector(".card-two");
-const card3 = document.querySelector(".card-three");
-const card4 = document.querySelector(".card-four");
+//const card2 = document.querySelector(".card-two");
+////const card3 = document.querySelector(".card-three");
+//const card4 = document.querySelector(".card-four");
 
-card1.innerHTML =
-  card[0].sportingClub + " year:" + card[0].year + " " + card[0].description;
-card2.innerHTML =
-  card[1].sportingClub + " year:" + card[1].year + " " + card[1].description;
-card3.innerHTML =
-  card[2].sportingClub + " year:" + card[2].year + " " + card[2].description;
-card4.innerHTML =
-  card[3].sportingClub + "  " + card[3].year + "   " + card[3].description;
+//foreach da anein bo away bo har danekyan awaman bobkat w function eky anonym da anein ka parameter akay nawakay nzikbet la eshakawa
+cards.forEach(function (card, index) {
+  //elementeky taza drust akain w aikaina naw class
+  let cardEl = document.createElement("div");
+  cardEl.classList.add("card");
+  card1.appendChild(cardEl);
 
-/*function displayCards() {
-  var result = '';
-	card.forEach(function(cards) {
-    result += '<div class="item col-sm-4"><h2>' + card.sportingClub +  '"></div><p class="text-right">' + card.y + '</p></div></div>';
+  let contentEl = document.createElement("div");
+  cardEl.appendChild(contentEl);
+
+  //heading 2 ayayn ba nawy aw yanay yary krdwa ley enja content akay te akain
+  let spClubEl = document.createElement("h2");
+  spClubEl.textContent = card.sportingClub;
+  contentEl.appendChild(spClubEl);
+
+  let yearEl = document.createElement("h3");
+  yearEl.textContent = card.year;
+  contentEl.appendChild(yearEl);
+
+  let descEl = document.createElement("p");
+  descEl.textContent = card.description;
+  contentEl.appendChild(descEl);
 });
-
-document.getElementById('.card-one').innerHTML = result;
-
-}
-
-displayCards();
-*/
